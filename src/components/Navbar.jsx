@@ -13,6 +13,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const handleCloseMenu = () => setMenuOpen(false);
+
   return (
     <header className="navbar navbar--solid">
       <div className="container navbar__inner">
@@ -28,9 +30,9 @@ export default function Navbar() {
         </nav>
         <QuoteButton />
         <button
-          className="navbar__toggle"
+          className={`navbar__toggle ${menuOpen ? "is-open" : ""}`}
           type="button"
-          aria-label="Open menu"
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((prev) => !prev)}
         >
@@ -40,14 +42,41 @@ export default function Navbar() {
         </button>
       </div>
       <div className={`mobile-menu ${menuOpen ? "is-open" : ""}`}>
-        <div className="container mobile-menu__inner">
-          {navLinks.map((link) => (
-            <a key={link.label} className="mobile-menu__link" href={link.href}>
-              {link.label}
-            </a>
-          ))}
-          <QuoteButton className="btn btn--primary mobile-menu__cta" />
-          <p className="mobile-menu__phone">(917) 318-1186</p>
+        <div className="mobile-menu__shell">
+          <div className="container mobile-menu__inner">
+            <div className="mobile-menu__header">
+              <p className="mobile-menu__eyebrow">Menu</p>
+              <a
+                className="mobile-menu__home"
+                href="#/"
+                onClick={handleCloseMenu}
+              >
+                Anchor Studio
+              </a>
+            </div>
+            <div className="mobile-menu__links">
+              {navLinks.map((link) => (
+                <a
+                  key={link.label}
+                  className="mobile-menu__link"
+                  href={link.href}
+                  onClick={handleCloseMenu}
+                >
+                  <span>{link.label}</span>
+                  <span className="mobile-menu__arrow" aria-hidden="true">
+                    <span />
+                    <span />
+                  </span>
+                </a>
+              ))}
+            </div>
+            <div className="mobile-menu__footer">
+              <QuoteButton className="btn btn--primary mobile-menu__cta" />
+              <a className="mobile-menu__contact" href="tel:9173181186">
+                Call (917) 318-1186
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </header>
