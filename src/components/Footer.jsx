@@ -13,7 +13,6 @@ const services = [
   "Basic SEO setup",
   "Photography add-on"
 ];
-const social = ["Instagram", "LinkedIn", "Behance"];
 
 export default function Footer() {
   return (
@@ -52,10 +51,7 @@ export default function Footer() {
             <li>
               <a href="mailto:Ebasse3@gmail.com">Ebasse3@gmail.com</a>
             </li>
-            <li>Chicago, IL</li>
-            {social.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
+            <li>Brooklyn, NY</li>
           </ul>
         </div>
       </div>
