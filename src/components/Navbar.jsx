@@ -3,11 +3,11 @@ import logo from "../assets/New Logo.png";
 import QuoteButton from "./QuoteButton.jsx";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Process", href: "/process" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" }
+  { label: "Home", href: "#/" },
+  { label: "Services", href: "#/services" },
+  { label: "Process", href: "#/process" },
+  { label: "Pricing", href: "#/pricing" },
+  { label: "Contact", href: "#/contact" }
 ];
 
 export default function Navbar() {
@@ -16,7 +16,7 @@ export default function Navbar() {
   return (
     <header className="navbar navbar--solid">
       <div className="container navbar__inner">
-        <a className="logo" href="/" aria-label="Anchor Studio home">
+        <a className="logo" href="#/" aria-label="Anchor Studio home">
           <img src={logo} alt="Anchor Studio" />
         </a>
         <nav className="navbar__links">

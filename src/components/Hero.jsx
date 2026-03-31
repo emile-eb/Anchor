@@ -15,7 +15,7 @@ export default function Hero() {
           </p>
           <div className="hero__actions">
             <QuoteButton />
-            <a className="btn btn--secondary" href="/services">
+            <a className="btn btn--secondary" href="#/services">
               View Services
             </a>
           </div>

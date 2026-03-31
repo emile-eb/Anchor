@@ -1,25 +1,49 @@
+import { useEffect, useState } from "react";
 import Home from "./pages/Home.jsx";
 import Contact from "./pages/Contact.jsx";
 import Services from "./pages/Services.jsx";
 import Pricing from "./pages/Pricing.jsx";
 import ProcessPage from "./pages/ProcessPage.jsx";
 
-export default function App() {
-  const path = window.location.pathname.replace(/\/+$/, "") || "/";
+function getRoute() {
+  const hash = window.location.hash || "";
 
-  if (path === "/contact") {
+  if (!hash.startsWith("#/")) {
+    return "/";
+  }
+
+  const route = hash.slice(1).replace(/\/+$/, "") || "/";
+  return route;
+}
+
+export default function App() {
+  const [route, setRoute] = useState(getRoute);
+
+  useEffect(() => {
+    const syncRoute = () => setRoute(getRoute());
+
+    window.addEventListener("hashchange", syncRoute);
+    window.addEventListener("load", syncRoute);
+
+    return () => {
+      window.removeEventListener("hashchange", syncRoute);
+      window.removeEventListener("load", syncRoute);
+    };
+  }, []);
+
+  if (route === "/contact") {
     return <Contact />;
   }
 
-  if (path === "/services") {
+  if (route === "/services") {
     return <Services />;
   }
 
-  if (path === "/pricing") {
+  if (route === "/pricing") {
     return <Pricing />;
   }
 
-  if (path === "/process") {
+  if (route === "/process") {
     return <ProcessPage />;
   }
 

@@ -1,11 +1,11 @@
 import logo from "../assets/Footer Logo.png";
 
 const nav = [
-  { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Process", href: "/process" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Contact", href: "/contact" }
+  { label: "Home", href: "#/" },
+  { label: "Services", href: "#/services" },
+  { label: "Process", href: "#/process" },
+  { label: "Pricing", href: "#/pricing" },
+  { label: "Contact", href: "#/contact" }
 ];
 const services = [
   "Up to 5 core pages",
@@ -20,7 +20,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <a className="logo" href="/" aria-label="Anchor Studio home">
+          <a className="logo" href="#/" aria-label="Anchor Studio home">
             <img src={logo} alt="Anchor Studio" />
           </a>
           <p className="muted">

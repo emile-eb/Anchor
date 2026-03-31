@@ -10,7 +10,7 @@ const plans = [
     summary:
       "A clean launch package for small local businesses that need a professional online presence fast.",
     cta: "Get Started",
-    href: "/contact",
+    href: "#/contact",
     features: [
       "Up to 3 core pages",
       "Mobile-responsive design",
@@ -26,7 +26,7 @@ const plans = [
     summary:
       "The strongest fit for most businesses that need a full site with the key essentials done properly.",
     cta: "Request Quote",
-    href: "/contact",
+    href: "#/contact",
     featured: true,
     features: [
       "Up to 5 core pages",
@@ -45,7 +45,7 @@ const plans = [
     summary:
       "For businesses that need a more polished presentation, stronger structure, and more custom execution.",
     cta: "Book a Call",
-    href: "/contact",
+    href: "#/contact",
     features: [
       "Everything in Growth",
       "Expanded page structure",
@@ -61,7 +61,7 @@ const plans = [
     summary:
       "Best for more complex builds, special integrations, or businesses that need custom photography and strategy.",
     cta: "Talk to Us",
-    href: "/contact",
+    href: "#/contact",
     features: [
       "Larger page count or custom structure",
       "Online ordering or advanced lead flow support",
@@ -154,7 +154,7 @@ export default function Pricing() {
                 around those assets.
               </p>
             </div>
-            <a className="btn btn--secondary" href="/contact">
+            <a className="btn btn--secondary" href="#/contact">
               Ask About Photography
             </a>
           </div>

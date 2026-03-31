@@ -50,7 +50,7 @@ export default function Services() {
               </p>
               <div className="services-hero__actions">
                 <QuoteButton />
-                <a className="btn btn--secondary" href="/contact">
+                <a className="btn btn--secondary" href="#/contact">
                   Contact Page
                 </a>
               </div>
@@ -112,7 +112,7 @@ export default function Services() {
               <h2>Need a site package tailored to your business?</h2>
               <p className="muted">Send over what you need and we will map the next step.</p>
             </div>
-            <a className="btn btn--primary" href="/contact">
+            <a className="btn btn--primary" href="#/contact">
               Go to Contact
             </a>
           </div>
