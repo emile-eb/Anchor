@@ -1,4 +1,5 @@
-﻿import heroMockup from "../assets/Best Hero Mockup.png";
+import heroMockup from "../assets/Best Hero Mockup.png";
+import QuoteButton from "./QuoteButton.jsx";
 
 export default function Hero() {
   return (
@@ -13,8 +14,10 @@ export default function Hero() {
             customers.
           </p>
           <div className="hero__actions">
-            <button className="btn btn--primary">Request a Quote</button>
-            <button className="btn btn--secondary">View Our Work</button>
+            <QuoteButton />
+            <a className="btn btn--secondary" href="/services">
+              View Services
+            </a>
           </div>
         </div>
         <div className="hero__media" data-reveal>

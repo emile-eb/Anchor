@@ -1,11 +1,17 @@
-﻿import logo from "../assets/Footer Logo.png";
+import logo from "../assets/Footer Logo.png";
 
-const nav = ["Home", "Work", "Services", "Process", "Pricing", "Contact"];
+const nav = [
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Process", href: "/process" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Contact", href: "/contact" }
+];
 const services = [
-  "Restaurant Websites",
-  "Service Business Sites",
-  "Menu & Booking Systems",
-  "Ongoing Care"
+  "Up to 5 core pages",
+  "Mobile-responsive design",
+  "Basic SEO setup",
+  "Photography add-on"
 ];
 const social = ["Instagram", "LinkedIn", "Behance"];
 
@@ -14,9 +20,9 @@ export default function Footer() {
     <footer className="footer">
       <div className="container footer__grid">
         <div className="footer__brand">
-          <div className="logo">
+          <a className="logo" href="/" aria-label="Anchor Studio home">
             <img src={logo} alt="Anchor Studio" />
-          </div>
+          </a>
           <p className="muted">
             Premium websites for restaurants and local service businesses.
           </p>
@@ -26,7 +32,9 @@ export default function Footer() {
           <h4>Navigation</h4>
           <ul className="footer-list">
             {nav.map((item) => (
-              <li key={item}>{item}</li>
+              <li key={item.label}>
+                <a href={item.href}>{item.label}</a>
+              </li>
             ))}
           </ul>
         </div>
@@ -41,7 +49,9 @@ export default function Footer() {
         <div>
           <h4>Contact</h4>
           <ul className="footer-list">
-            <li>hello@anchorstudio.co</li>
+            <li>
+              <a href="mailto:Ebasse3@gmail.com">Ebasse3@gmail.com</a>
+            </li>
             <li>Chicago, IL</li>
             {social.map((item) => (
               <li key={item}>{item}</li>

@@ -1,15 +1,14 @@
-﻿import Navbar from "../components/Navbar.jsx";
+import { useEffect } from "react";
+import Navbar from "../components/Navbar.jsx";
 import Hero from "../components/Hero.jsx";
 import TrustStrip from "../components/TrustStrip.jsx";
 import ProblemSolution from "../components/ProblemSolution.jsx";
-import PortfolioGrid from "../components/PortfolioGrid.jsx";
 import Process from "../components/Process.jsx";
 import Results from "../components/Results.jsx";
 import About from "../components/About.jsx";
 import Testimonials from "../components/Testimonials.jsx";
 import FinalCta from "../components/FinalCta.jsx";
 import Footer from "../components/Footer.jsx";
-import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -40,12 +39,18 @@ export default function Home() {
       <main>
         <Hero />
         <TrustStrip />
-        <ProblemSolution />
+        <div id="services">
+          <ProblemSolution />
+        </div>
         <Results />
-        <Process />
+        <div id="process">
+          <Process />
+        </div>
         <About />
         <Testimonials />
-        <FinalCta />
+        <div id="pricing">
+          <FinalCta />
+        </div>
       </main>
       <Footer />
     </div>
