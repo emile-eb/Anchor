@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
 
@@ -35,31 +35,9 @@ export default function Contact() {
     return () => observer.disconnect();
   }, []);
 
-  const mailtoHref = useMemo(() => {
-    const subjectName = form.name.trim() || "Website inquiry";
-    const lines = [
-      `Name: ${form.name || "-"}`,
-      `Email: ${form.email || "-"}`,
-      `Business: ${form.business || "-"}`,
-      `Phone: ${form.phone || "-"}`,
-      "",
-      "Project details:",
-      form.details || "-"
-    ];
-
-    const subject = encodeURIComponent(`Anchor Studio inquiry from ${subjectName}`);
-    const body = encodeURIComponent(lines.join("\n"));
-    return `mailto:Ebasse3@gmail.com?subject=${subject}&body=${body}`;
-  }, [form]);
-
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    window.location.href = mailtoHref;
   };
 
   return (
@@ -103,7 +81,16 @@ export default function Contact() {
             <div className="contact-form-wrap" data-reveal>
               <p className="eyebrow">Contact Form</p>
               <h2>Start the conversation.</h2>
-              <form className="contact-form" onSubmit={handleSubmit}>
+              <form
+                className="contact-form"
+                action="https://formsubmit.co/Ebasse3@gmail.com"
+                method="POST"
+              >
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Anchor Studio inquiry"
+                />
                 <label className="field">
                   <span>Name</span>
                   <input
